@@ -7,7 +7,7 @@
  * Return: The number of characters printed (always 1)
  */
 
-int print_char(const char *c)
+int print_char(const char c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			chara_print += print_char(format);
+			chara_print += print_char(*format);
 		}
 		else
 		{
@@ -60,11 +60,11 @@ int _printf(const char *format, ...)
 				break;
 			if (*format == '%')
 			{
-				chara_print += print_char(format);
+				chara_print += print_char(*format);
 			}
 			else if (*format == 'c')
 			{
-				char *c = va_arg(args, char *);
+				char c = va_arg(args, int);
 
 				chara_print += print_char(c);
 			}
