@@ -7,7 +7,7 @@
  * Return: The number of characters printed (always 1)
  */
 
-int print_char(const char c)
+int print_char(const char *c)
 {
 	write(1, &c, 1);
 	return (1);
