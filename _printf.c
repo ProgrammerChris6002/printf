@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			chara_print += print_char(*format);
+			chara_print += print_char(format);
 		}
 		else
 		{
@@ -60,11 +60,11 @@ int _printf(const char *format, ...)
 				break;
 			if (*format == '%')
 			{
-				chara_print += print_char(*format);
+				chara_print += print_char(format);
 			}
 			else if (*format == 'c')
 			{
-				char c = va_arg(args, int);
+				char *c = va_arg(args, char *);
 
 				chara_print += print_char(c);
 			}
